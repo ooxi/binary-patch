@@ -1,0 +1,16 @@
+---
+base: ubuntu:20.04
+install:
+ - cmake
+ - g++
+ - mingw-w64
+ - wine
+---
+#!/bin/bash
+
+
+sudo dpkg --add-architecture i386
+
+sudo apt-get -y update && sudo apt-get -y install	\
+	wine32
+
