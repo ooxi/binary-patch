@@ -14,21 +14,12 @@ target_link_libraries(
 	"${PROJECT_NAME}"
 	PRIVATE
 		binary-patch::example
+	PRIVATE
+		binary-patch::defaults
 )
-
-
-# @author Kerrek SB
-# @see https://stackoverflow.com/a/6405064
-#target_link_libraries(
-#	"${PROJECT_NAME}"
-#	PRIVATE
-#		-static-libgcc
-#		-static-libstdc++
-#)
 
 
 add_test(
 	NAME "${PROJECT_NAME}"
 	COMMAND "${PROJECT_NAME}"
 )
-

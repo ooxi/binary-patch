@@ -18,5 +18,11 @@ target_include_directories(
 )
 
 
-add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/test/ExampleTest")
+target_link_libraries(
+	"${PROJECT_NAME}"
+	PRIVATE
+		binary-patch::defaults
+)
 
+
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/test/ExampleTest")

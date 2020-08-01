@@ -1,0 +1,3 @@
+[submodule "external/rapidcsv"]
+	path = external/rapidcsv
+	url = https://github.com/d99kris/rapidcsv
