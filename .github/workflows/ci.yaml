@@ -1,0 +1,32 @@
+name: CI
+
+
+# We want to build on all branches and pull requests
+#
+# @see https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
+on: [push, pull_request]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 30
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+
+    # Prepare build environment
+    - name: Prepare build environment
+      run: npx --package mini-cross mc --no-tty _ make clean
+
+    # Native compilation and test
+    - name: Native Build
+      run: npx --package mini-cross mc --no-tty _ make clean native
+
+    # Cross compilation and test
+    - name: Windows Build
+      run: npx --package mini-cross mc --no-tty _ make clean windows
+
