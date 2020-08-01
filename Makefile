@@ -32,4 +32,3 @@ windows:
 	cmake -B 'build-windows' -S '.' -DCMAKE_TOOLCHAIN_FILE='cmake/mingw-w64-x86_64.cmake'
 	make -C 'build-windows'
 	make -C 'build-windows' test
-

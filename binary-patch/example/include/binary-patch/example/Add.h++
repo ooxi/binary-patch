@@ -8,4 +8,3 @@ namespace binary_patch::example {
 
 
 #endif
-

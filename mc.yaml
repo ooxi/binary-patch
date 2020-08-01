@@ -13,4 +13,3 @@ sudo dpkg --add-architecture i386
 
 sudo apt-get -y update && sudo apt-get -y install	\
 	wine32
-

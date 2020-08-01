@@ -5,4 +5,3 @@
 int binary_patch::example::add(int x, int y) {
 	return x + y;
 }
-
