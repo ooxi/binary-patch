@@ -26,3 +26,4 @@ target_link_libraries(
 
 
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/test/ExampleTest")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/test/RapidCsvTest")

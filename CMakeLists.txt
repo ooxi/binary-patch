@@ -12,4 +12,5 @@ add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/binary-patch/example")
 
 
 # External modules
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/external/rapidcsv-cmake")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/external/rapidcsv")
