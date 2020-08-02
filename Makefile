@@ -23,7 +23,7 @@ clean:
 native:
 	cmake -B 'build-native' -S '.'
 	make -C 'build-native'
-	make -C 'build-native' test
+	CTEST_OUTPUT_ON_FAILURE=1 make -C 'build-native' test
 
 
 
@@ -31,4 +31,4 @@ native:
 windows:
 	cmake -B 'build-windows' -S '.' -DCMAKE_TOOLCHAIN_FILE='cmake/mingw-w64-x86_64.cmake'
 	make -C 'build-windows'
-	make -C 'build-windows' test
+	CTEST_OUTPUT_ON_FAILURE=1 make -C 'build-windows' test
