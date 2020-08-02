@@ -1,3 +1,6 @@
+[submodule "external/cxxopts"]
+	path = external/cxxopts
+	url = https://github.com/jarro2783/cxxopts
 [submodule "external/rapidcsv"]
 	path = external/rapidcsv
 	url = https://github.com/d99kris/rapidcsv

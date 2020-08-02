@@ -13,4 +13,6 @@ add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/binary-patch/example")
 
 
 # External modules
+option(CXXOPTS_BUILD_TESTS "" OFF)
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/external/cxxopts")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/external/rapidcsv-cmake")
