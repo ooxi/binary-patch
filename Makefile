@@ -24,6 +24,7 @@ native:
 	cmake -B 'build-native' -S '.'
 	make -C 'build-native'
 	CTEST_OUTPUT_ON_FAILURE=1 make -C 'build-native' test
+	./example/binary-patch.sh
 
 
 

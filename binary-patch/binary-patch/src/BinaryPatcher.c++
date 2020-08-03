@@ -16,9 +16,10 @@ using binary_patch::Entry;
 
 
 template<std::size_t needleLength>
-static auto find(	std::vector<char>& haystack,
+static std::vector<std::vector<char>::iterator> find(
+			std::vector<char>& haystack,
 			std::array<char, needleLength> needle
-		) -> std::vector<std::vector<char>::iterator> {
+		) {
 
 	std::vector<std::vector<char>::iterator> result;
 
@@ -44,8 +45,8 @@ BinaryPatcher::BinaryPatcher(
 	Entry const& needle
 ) :
 	original{std::move(haystack)},
-	keys{std::move(find(this->original, needle.getKey().getKey()))},
-	macs{std::move(find(this->original, needle.getMac().getMac()))}
+	keys{find(this->original, needle.getKey().getKey())},
+	macs{find(this->original, needle.getMac().getMac())}
 {}
 
 

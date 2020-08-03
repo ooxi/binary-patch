@@ -19,6 +19,8 @@ namespace binary_patch {
 
 		Key const& getKey() const;
 		Mac const& getMac() const;
+
+		std::string getName() const;
 	};
 }
 
