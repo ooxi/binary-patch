@@ -1,6 +1,9 @@
 [submodule "external/cxxopts"]
 	path = external/cxxopts
 	url = https://github.com/jarro2783/cxxopts
+[submodule "external/exception"]
+	path = external/exception
+	url = https://github.com/ooxi/exception.hpp
 [submodule "external/rapidcsv"]
 	path = external/rapidcsv
 	url = https://github.com/d99kris/rapidcsv

@@ -2,6 +2,9 @@
 
 #include <binary-patch/Key.h++>
 #include <binary-patch/Mac.h++>
+#include <cstdint>
+#include <sstream>
+#include <string>
 #include <utility>
 
 
@@ -23,4 +26,23 @@ Key const& Entry::getKey() const {
 
 Mac const& Entry::getMac() const {
 	return mac;
+}
+
+
+std::string Entry::getName() const {
+	std::stringstream ss;
+
+	ss << "KEY = ";
+
+	for (auto const k : getKey().getKey()) {
+		ss << std::hex << static_cast<std::uint32_t>(k);
+	}
+
+	ss << ", MAC = ";
+
+	for (auto const m : getMac().getMac()) {
+		ss << std::hex << static_cast<std::uint32_t>(m);
+	}
+
+	return ss.str();
 }

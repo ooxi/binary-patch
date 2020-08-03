@@ -3,6 +3,7 @@
 
 
 #include <array>
+#include <string_view>
 
 
 namespace binary_patch {
@@ -15,6 +16,9 @@ namespace binary_patch {
 		explicit Mac(std::array<char, 6> mac);
 
 		std::array<char, 6> const& getMac() const;
+
+	public:
+		static Mac parseHex(std::string_view macHex);
 	};
 }
 

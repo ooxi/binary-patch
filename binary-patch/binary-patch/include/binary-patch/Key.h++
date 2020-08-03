@@ -3,6 +3,7 @@
 
 
 #include <array>
+#include <string_view>
 
 
 namespace binary_patch {
@@ -15,6 +16,9 @@ namespace binary_patch {
 		explicit Key(std::array<char, 16> key);
 
 		std::array<char, 16> const& getKey() const;
+
+	public:
+		static Key parseHex(std::string_view keyHex);
 	};
 }
 

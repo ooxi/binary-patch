@@ -20,11 +20,13 @@ Options::Options(
 	Key key,
 	Mac mac,
 	std::filesystem::path inputFile,
+	std::filesystem::path replacementFile,
 	std::filesystem::path outputDirectory
 ) :
 	key{std::move(key)},
 	mac{std::move(mac)},
 	inputFile{std::move(inputFile)},
+	replacementFile{std::move(replacementFile)},
 	outputDirectory{std::move(outputDirectory)}
 {}
 
@@ -36,6 +38,11 @@ Key const& Options::getKey() const {
 
 Mac const& Options::getMac() const {
 	return mac;
+}
+
+
+std::filesystem::path Options::getReplacementFile() const {
+	return replacementFile;
 }
 
 

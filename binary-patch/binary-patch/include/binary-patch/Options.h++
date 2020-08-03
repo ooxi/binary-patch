@@ -14,6 +14,7 @@ namespace binary_patch {
 		Key key;
 		Mac mac;
 		std::filesystem::path inputFile;
+		std::filesystem::path replacementFile;
 		std::filesystem::path outputDirectory;
 
 	public:
@@ -21,12 +22,14 @@ namespace binary_patch {
 			Key key,
 			Mac mac,
 			std::filesystem::path inputFile,
+			std::filesystem::path replacementFile,
 			std::filesystem::path outputDirectory
 		);
 
 		Key const& getKey() const;
 		Mac const& getMac() const;
 		std::filesystem::path getInputFile() const;
+		std::filesystem::path getReplacementFile() const;
 		std::filesystem::path getOutputDirectory() const;
 	};
 }
