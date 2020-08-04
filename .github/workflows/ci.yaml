@@ -13,6 +13,7 @@ jobs:
     timeout-minutes: 30
 
     steps:
+
     # Checks-out your repository under $GITHUB_WORKSPACE
     - uses: actions/checkout@v2
       with:
@@ -22,11 +23,24 @@ jobs:
     - name: Prepare build environment
       run: npx --package mini-cross mc --no-tty _ make clean
 
-    # Native compilation and test
+    # Native compilation, test and upload
     - name: Native Build
       run: npx --package mini-cross mc --no-tty _ make clean native
 
-    # Cross compilation and test
+    - name: Upload native artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Ubuntu 20.04 amd64
+        path: build-native/binary-patch/binary-patch/executable/binary-patch-binary-patch-executable
+        if-no-files-found: error
+
+    # Cross compilation, test and upload
     - name: Windows Build
       run: npx --package mini-cross mc --no-tty _ make clean windows
 
+    - name: Upload Windows artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Windows amd64
+        path: build-windows/binary-patch/binary-patch/executable/binary-patch-binary-patch-executable.exe
+        if-no-files-found: error
