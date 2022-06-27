@@ -4,7 +4,11 @@ name: CI
 # We want to build on all branches and pull requests
 #
 # @see https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron:  '0 0 15 * *'
 
 
 jobs:

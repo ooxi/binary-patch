@@ -1,4 +1,4 @@
-# binary-patch
+# binary-patch [![Build Status](https://github.com/ooxi/binary-patch/actions/workflows/ci.yaml/badge.svg)](https://github.com/ooxi/binary-patch/actions)
 
 
 ## Quickstart
